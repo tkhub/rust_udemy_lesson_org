@@ -1,4 +1,5 @@
 use rand::Rng;
+mod filters;
 fn main() {
     // let sixdice:i32 = rand::thread_rng().getn_range(1..6);
     // println!("{}", sixdice)
@@ -11,4 +12,5 @@ fn main() {
     println!("Random u32: {}", rng.gen::<u32>());
     println!("Random i32: {}", rng.gen::<i32>());
     println!("Random float: {}", rng.gen::<f64>());
+    filters::test();
 }
