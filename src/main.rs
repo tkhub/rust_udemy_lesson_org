@@ -1,8 +1,16 @@
 use rand::Rng;
-mod filters;
+pub mod test_mod{
+    pub fn test_mod_fn(){
+        println!("test_mod_fn");
+    }
+    pub mod test_submod{
+        pub fn test_submod_fn(){
+            println!("test_submod_fn");
+        }
+    }
+}
+
 fn main() {
-    // let sixdice:i32 = rand::thread_rng().getn_range(1..6);
-    // println!("{}", sixdice)
     let mut rng = rand::thread_rng();
 
     let n1: u8 = rng.gen();
@@ -12,5 +20,11 @@ fn main() {
     println!("Random u32: {}", rng.gen::<u32>());
     println!("Random i32: {}", rng.gen::<i32>());
     println!("Random float: {}", rng.gen::<f64>());
-    filters::test();
+
+    crate::test_mod::test_mod_fn();
+    crate::test_mod::test_submod::test_submod_fn();
+
+    test_mod::test_mod_fn();
+    test_mod::test_submod::test_submod_fn();
+
 }
